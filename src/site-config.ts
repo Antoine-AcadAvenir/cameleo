@@ -1,12 +1,12 @@
 export const SiteConfig = {
-  title: "NOW.TS",
+  title: "Cameleo",
   description: "Collect and showcase powerful video and text testimonials",
-  prodUrl: "https://demo.nowts.app",
+  prodUrl: "https://cameleo.agency",
   appId: "nowts",
-  domain: "demo.nowts.app",
+  domain: "cameleo.agency",
   appIcon: "/images/icon.png",
   company: {
-    name: "NowTS",
+    name: "Cameleo",
     address: "", // Remove if not needed
   },
   brand: {
@@ -16,7 +16,7 @@ export const SiteConfig = {
     image: "https://melvynx.com/images/me/twitter-en.jpg",
     website: "https://melvynx.com",
     twitter: "https://twitter.com/melvyn_me",
-    name: "Melvynx",
+    name: "Antoine",
   },
   features: {
     /**

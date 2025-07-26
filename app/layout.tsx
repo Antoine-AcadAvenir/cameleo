@@ -1,4 +1,5 @@
 import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
+import MouseLight from "@/components/ui/MouseLight";
 import { FloatingLegalFooter } from "@/features/legal/floating-legal-footer";
 import { NextTopLoader } from "@/features/page/next-top-loader";
 import { ServerToaster } from "@/features/server-sonner/server-toaster";
@@ -52,6 +53,7 @@ export default function RootLayout({
         >
           <NuqsAdapter>
             <Providers>
+              <MouseLight />
               <NextTopLoader
                 delay={100}
                 showSpinner={false}
