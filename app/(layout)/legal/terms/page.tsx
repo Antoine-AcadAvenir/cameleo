@@ -23,7 +23,7 @@ export default function page() {
       </div>
       <Layout>
         <LayoutContent className="prose dark:prose-invert m-auto mb-8">
-          <MDXRemote source={markdown} />
+          <p>{markdown}</p>
         </LayoutContent>
       </Layout>
 
