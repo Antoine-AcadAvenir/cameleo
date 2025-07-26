@@ -1,3 +1,4 @@
+
 import { Typography } from "@/components/nowts/typography";
 import { NotifyNowts } from "@/features/nowts/notify-nowts";
 import { Layout, LayoutContent } from "@/features/page/layout";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description: "Terms of service",
 };
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export default function page() {
   return (
