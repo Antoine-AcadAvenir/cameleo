@@ -285,3 +285,12 @@
     }
   }
 }
+
+
+img {
+  filter: grayscale(100%);
+}
+
+h2 {
+  filter: grayscale(100%);
+}

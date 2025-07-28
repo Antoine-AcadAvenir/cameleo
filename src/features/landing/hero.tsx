@@ -16,31 +16,45 @@ export const Hero = () => {
               variant="h1"
               className="text-5xl font-semibold tracking-tight text-balance sm:text-7xl lg:text-7xl"
             >
-              Write the best content and Grow your{" "}
+              Vous bâtissez la vision Nous façonnons votre horizon{" "}
               <span className="relative inline-block">
-                <span>business</span>
+                <span>numérique !</span>
                 <CircleSvg className="fill-primary absolute inset-0" />
               </span>
             </Typography>
-            <Typography
-              variant="large"
-              className="text-muted-foreground mt-8 text-lg font-medium text-pretty sm:text-xl/8"
-            >
-              Build for Thread, create, schedule and publish your content to
-              your account with AI.
-            </Typography>
+          <Typography
+  variant="large"
+  className="text-muted-foreground mt-8 text-lg font-medium text-pretty sm:text-xl/8"
+>
+  <span style={{ filter: 'grayscale(95%)' }}>🧠</span> Stratégie.
+  <span style={{ filter: 'grayscale(95%)' }}> 💻</span> Développement. SaaS & Sites web.
+  <span style={{ filter: 'grayscale(95%)' }}> 🎨</span> Design.
+  <span style={{ filter: 'grayscale(95%)' }}> ✍️</span> Copywriting
+  <span style={{ filter: 'grayscale(95%)' }}> 🎥</span> Création de contenu.
+  <span style={{ filter: 'grayscale(95%)' }}> 🤖</span> Automatisation & IA.
+  <span style={{ filter: 'grayscale(95%)' }}> 📢</span> Publicité.
+  <span style={{ filter: 'grayscale(95%)' }}> 🤝</span> Partenariats.
+  <span style={{ filter: 'grayscale(95%)' }}> 🔍</span> Recherche & innovation.
+  <span style={{ filter: 'grayscale(95%)' }}> 📊</span> Analyse de données.
+  <span style={{ filter: 'grayscale(95%)' }}> 📱</span> Applications mobiles.
+  <span style={{ filter: 'grayscale(95%)' }}> ☁️</span> Cloud & hébergement.
+  <span style={{ filter: 'grayscale(95%)' }}> 🛠️</span> Support & maintenance.
+  chaque pixel compte.  
+  <br />
+  Vous avez une idée ? Nous la créons de zéro.
+</Typography>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
-                href="/signin"
+                href="/auth/signin"
                 className={buttonVariants({ size: "lg", variant: "default" })}
               >
-                Get started
+                Commencer
               </Link>
               <Link
                 href="#pricing"
                 className={buttonVariants({ size: "lg", variant: "link" })}
               >
-                Learn more <span aria-hidden="true">→</span>
+                En savoir plus <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>

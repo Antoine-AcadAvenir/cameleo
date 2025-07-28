@@ -1,9 +1,9 @@
 export const SiteConfig = {
   title: "Cameleo",
   description: "Collect and showcase powerful video and text testimonials",
-  prodUrl: "https://cameleo.agency",
-  appId: "nowts",
-  domain: "cameleo.agency",
+  prodUrl: "https://cameleo.vercel.appy",
+  appId: "Cameleo",
+  domain: "cameleo.vercel.app",
   appIcon: "/images/icon.png",
   company: {
     name: "Cameleo",
