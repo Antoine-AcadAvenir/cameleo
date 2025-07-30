@@ -21,8 +21,12 @@ type FeaturesPreviewProps = {
 
 export const FAQSection = (props: FeaturesPreviewProps) => {
   return (
-    <SectionLayout size="lg" className="flex max-lg:flex-col">
-      <div className="flex-1 space-y-2">
+    <SectionLayout size="lg" className="relative flex max-lg:flex-col">
+      {/* ✅ Quadrillage en arrière-plan seulement dans cette section */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-grid [mask-image:linear-gradient(180deg,transparent,var(--foreground),transparent)]" />
+
+      {/* ✅ Le contenu passe au-dessus du quadrillage */}
+      <div className="relative z-10 flex-1 space-y-2">
         <Typography className="text-primary font-extrabold uppercase">
           FAQ
         </Typography>
@@ -30,7 +34,8 @@ export const FAQSection = (props: FeaturesPreviewProps) => {
           Frequently Asked Questions
         </Typography>
       </div>
-      <div className="flex-1">
+
+      <div className="relative z-10 flex-1">
         <Accordion type="single" collapsible>
           {props.faq.map((e, i) => {
             return (

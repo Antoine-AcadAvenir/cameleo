@@ -7,11 +7,10 @@ import { Alert, AlertTitle } from "@/components/ui/alert";
 import { cn } from "@/lib/utils";
 import {
   BarChart3,
-  Calendar,
-  CalendarCheck,
+  Brain,
   CheckCircle,
-  Sparkles,
-  X,
+  Palette,
+  Zap,
 } from "lucide-react";
 import type { Variants } from "motion/react";
 import { motion } from "motion/react";
@@ -20,6 +19,7 @@ import { SectionLayout } from "./section-layout";
 export function BentoGridSection() {
   return (
     <SectionLayout>
+      <h2 className="mb-6 text-3xl font-bold text-center">Notre méthode</h2>
       <BentoGrid className="mx-auto max-w-4xl md:auto-rows-[20rem]">
         {items.map((item, i) => (
           <BentoGridItem
@@ -49,14 +49,10 @@ const Skeleton1 = () => {
       className="flex h-full flex-col gap-2"
     >
       <motion.div className="border-border bg-background flex flex-row items-start gap-2 rounded-2xl border p-3">
-        <img
-          alt="avatar"
-          src="https://melvynx.com/_next/image?url=%2Fimages%2Fmy-face.png&w=828&q=75"
-          className="size-6 shrink-0 rounded-full"
-        />
+        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-gray-800 to-gray-500" />
         <div>
           <p className="text-xs text-neutral-500">
-            Create a Thread to announce Now.ts
+            Définir vos objectifs avec un questionnaire sur mesure
           </p>
         </div>
       </motion.div>
@@ -65,10 +61,9 @@ const Skeleton1 = () => {
         className="border-border bg-background flex flex-row items-start justify-end gap-2 rounded-2xl border p-3"
       >
         <p className="text-xs text-neutral-500">
-          Today I announced my new project, Now.TS, the perfect way to create
-          professional Next.js application in days.
+          Plan personnalisé : stratégie, étapes, et résultats attendus
         </p>
-        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" />
+        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-gray-800 to-gray-500" />
       </motion.div>
     </motion.div>
   );
@@ -88,18 +83,19 @@ const Skeleton2 = () => {
       <motion.div>
         <Alert variant="default" className="">
           <Loader size={20} />
-          <AlertTitle>Schedule your threads...</AlertTitle>
+          <AlertTitle>Planification en cours...</AlertTitle>
         </Alert>
       </motion.div>
       <motion.div variants={variants}>
         <Alert variant="success" className="">
           <CheckCircle size={20} />
-          <AlertTitle>Your threads are now scheduled for 7:00 AM</AlertTitle>
+          <AlertTitle>Votre projet est validé et lancé !</AlertTitle>
         </Alert>
       </motion.div>
     </motion.div>
   );
 };
+
 const Skeleton3 = () => {
   const variants = {
     initial: {
@@ -122,7 +118,7 @@ const Skeleton3 = () => {
       className="dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex size-full min-h-24 flex-1 flex-col space-y-2 rounded-lg"
       style={{
         background:
-          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+          "linear-gradient(-45deg, #000000, #333333, #666666, #ffffff)",
         backgroundSize: "400% 400%",
       }}
     >
@@ -130,26 +126,15 @@ const Skeleton3 = () => {
     </motion.div>
   );
 };
+
 const Skeleton4 = () => {
   const first = {
-    initial: {
-      x: 20,
-      rotate: -5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
+    initial: { x: 20, rotate: -5 },
+    hover: { x: 0, rotate: 0 },
   };
   const second = {
-    initial: {
-      x: -20,
-      rotate: 5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
+    initial: { x: -20, rotate: 5 },
+    hover: { x: 0, rotate: 0 },
   };
   return (
     <motion.div
@@ -162,28 +147,29 @@ const Skeleton4 = () => {
         variants={first}
         className="border-border bg-background flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border p-4"
       >
-        <Typography variant="large">+123 followers</Typography>
-        <Typography variant={"muted"}>In the last 30 days</Typography>
-        <Typography variant={"muted"} className="text-green-500">
-          +12%
+        <Typography variant="large">+50% Résultats</Typography>
+        <Typography variant={"muted"}>Sur vos objectifs</Typography>
+        <Typography variant={"muted"} className="text-gray-300">
+          Paiement à la performance
         </Typography>
       </motion.div>
-      <motion.div className="border-border bg-background flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border p-4">
-        <Typography variant="large">+1.4 M Views</Typography>
-        <Typography variant={"muted"}>In the last 30 days</Typography>
-        <Typography variant={"muted"} className="text-green-500">
-          +21%
+      <motion.div
+        className="border-border bg-background flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border p-4"
+      >
+        <Typography variant="large">100% Personnalisé</Typography>
+        <Typography variant={"muted"}>Suivi en temps réel</Typography>
+        <Typography variant={"muted"} className="text-gray-300">
+          Plan sur mesure
         </Typography>
       </motion.div>
       <motion.div
         variants={second}
         className="border-border bg-background flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border p-4"
       >
-        <Typography variant="large">1244 likes</Typography>
-        <Typography variant="large">766 replis</Typography>
-        <Typography variant={"muted"}>In the last 30 days</Typography>
-        <Typography variant={"muted"} className="text-green-500">
-          +12%
+        <Typography variant="large">50% Equity</Typography>
+        <Typography variant={"muted"}>Pour projets tech</Typography>
+        <Typography variant={"muted"} className="text-gray-300">
+          Partenariat stratégique
         </Typography>
       </motion.div>
     </motion.div>
@@ -192,28 +178,12 @@ const Skeleton4 = () => {
 
 const Skeleton5 = () => {
   const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
+    initial: { x: 0 },
+    animate: { x: 10, rotate: 5, transition: { duration: 0.2 } },
   };
   const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
-      },
-    },
+    initial: { x: 0 },
+    animate: { x: -10, rotate: -5, transition: { duration: 0.2 } },
   };
 
   return (
@@ -226,15 +196,9 @@ const Skeleton5 = () => {
         variants={variants}
         className="border-border bg-background flex flex-row items-start gap-2 rounded-2xl border p-3"
       >
-        <img
-          src="https://melvynx.com/_next/image?url=%2Fimages%2Fmy-face.png&w=828&q=75"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="size-10 rounded-full"
-        />
+        <div className="size-10 rounded-full bg-gradient-to-r from-gray-800 to-gray-500" />
         <p className="text-xs text-neutral-500">
-          What I need to do to get more followers ?
+          Freelance : passez notre certification rigoureuse
         </p>
       </motion.div>
       <motion.div
@@ -242,23 +206,18 @@ const Skeleton5 = () => {
         className="border-border bg-background flex flex-row items-start justify-end gap-2 rounded-2xl border p-3"
       >
         <div>
-          <p className="text-xs text-neutral-500">Searching...</p>
+          <p className="text-xs text-neutral-500">Certification obtenue</p>
           <motion.p
             className="text-xs text-neutral-500"
             variants={{
-              initial: {
-                opacity: 0,
-              },
-              animate: {
-                opacity: 1,
-              },
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
             }}
           >
-            Based on the Threads activity of the past 30 days, you should focus
-            creating content on Next.js
+            Formés à notre méthode, rémunérés aux résultats, zéro risque
           </motion.p>
         </div>
-        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-pink-500 to-violet-500" />
+        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-gray-800 to-gray-500" />
       </motion.div>
     </motion.div>
   );
@@ -266,59 +225,58 @@ const Skeleton5 = () => {
 
 const items = [
   {
-    title: "AI Content Generation",
+    title: "Stratégie sur mesure",
     description: (
       <span className="text-sm">
-        Experience the power of AI in generating unique content.
+        Nous définissons vos objectifs avec un questionnaire pour un plan précis et personnalisé.
       </span>
     ),
     header: <Skeleton1 />,
     className: "md:col-span-1",
-    icon: <Sparkles size={20} />,
+    icon: <Brain size={20} />,
   },
   {
-    title: "Schedule with ease",
+    title: "Exécution par étapes",
     description: (
       <span className="text-sm">
-        We help you schedule your threads with ease.
+        Chaque étape est validée et payée pour un suivi clair et efficace.
       </span>
     ),
     header: <Skeleton2 />,
     className: "md:col-span-1",
-    icon: <Calendar size={20} />,
+    icon: <CheckCircle size={20} />,
   },
   {
-    title: "Calendar View",
+    title: "Design brutal & efficace",
     description: (
       <span className="text-sm">
-        See what you have planned for the day with our calendar view.
+        Un style noir et blanc, percutant, qui incarne notre approche directe.
       </span>
     ),
     header: <Skeleton3 />,
     className: "md:col-span-1",
-    icon: <CalendarCheck size={20} />,
+    icon: <Palette size={20} />,
   },
   {
-    title: "Threads Analysis",
+    title: "Paiement flexible",
     description: (
       <span className="text-sm">
-        Understand your threads with our powerful analytics.
+        Prix fixe, paiement à la performance, ou partenariat en equity : vous choisissez.
       </span>
     ),
     header: <Skeleton4 />,
     className: "md:col-span-2",
     icon: <BarChart3 size={20} />,
   },
-
   {
-    title: "See what works",
+    title: "Freelances d’élite",
     description: (
       <span className="text-sm">
-        Understand the hype and trends with our powerful research tools.
+        Formés à notre méthode, certifiés, rémunérés aux résultats. Zéro risque, maximum d’impact.
       </span>
     ),
     header: <Skeleton5 />,
     className: "md:col-span-1",
-    icon: <X className="size-4 text-neutral-500" />,
+    icon: <Zap size={20} />,
   },
 ];

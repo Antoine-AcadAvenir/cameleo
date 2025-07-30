@@ -12,24 +12,24 @@ type StatProps = {
 
 const stats: StatProps[] = [
   {
-    number: 476,
-    suffix: "K",
-    text: "Threads scheduled every month.",
+    number: 69.4,
+    suffix: " %",
+    text: "Des entreprises affirment que leur présence en ligne est leur premier levier de croissance. Lire, c’est bien. Agir, c’est mieux. Il est temps de passer à l’action.",
   },
   {
-    number: 1.44,
-    suffix: "K",
-    text: "Users that use our platform.",
+    number: 69.4,
+    suffix: " B",
+    text: "Le marché numérique français est évalué à 69,4 milliards d’euros en 2024. Alors, vous hésitez encore ?",
   },
   {
-    number: 1.5,
-    suffix: "M+",
-    text: "Interactions with posts created by our users.",
+    number: +69.4,
+    suffix: " %",
+    text: "C’est la croissance du chiffre d’affaires des entreprises engagées dans leur transformation digitale. Et vous, vous attendiez quoi ?",
   },
   {
-    number: 192,
-    suffix: "K",
-    text: "Users impacted by our published posts.",
+    number: 69.4,
+    suffix: " %",
+    text: "des clients préfèrent payer pour un résultat concret plutôt que pour une prestation sans garantie. Chez CAMELEO, le risque, c’est nous qui le prenons.",
   },
 ];
 

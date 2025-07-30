@@ -92,9 +92,10 @@ export function LandingHeader() {
           }}
           className="text-muted-foreground flex items-center gap-4 text-sm font-medium"
         >
-          <Link href="#features">Features</Link>
-          <Link href="#pricing">Prix</Link>
+          <Link href="#features">services & résultat</Link>
+          <Link href="/pricing">Prix</Link>
           <Link href="/posts">Blog</Link>
+          <Link href="/partenaire">partenaire</Link>
           <AuthButtonClient />
           <ThemeToggle />
         </motion.nav>

@@ -4,7 +4,7 @@ type LogoSvgProps = ComponentPropsWithoutRef<"svg"> & { size?: number };
 
 export const LogoSvg = ({ size = 32, ...props }: LogoSvgProps) => {
   return (
-    <svg width="90" height="90" viewBox="0 0 1446 1446" fill="none" xmlns="http://www.w3.org/2000/svg" href="http://www.w3.org/1999/xlink">
+    <svg width="70" height="70" viewBox="0 0 1446 1446" fill="none" xmlns="http://www.w3.org/2000/svg" href="http://www.w3.org/1999/xlink">
 <rect width="1470" height="1470" fill="url(#pattern0_0_1)"/>
 <defs>
 <pattern id="pattern0_0_1" patternContentUnits="objectBoundingBox" width="1" height="1">

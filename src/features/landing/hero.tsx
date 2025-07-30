@@ -1,12 +1,17 @@
+"use client";
+
 import { CircleSvg } from "@/components/svg/circle-svg";
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Typography } from "../../components/nowts/typography";
+import { Typography } from "@/components/nowts/typography";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { LiquidBubbles } from "@/components/ui/liquidbubbles.tsx";
 
 export const Hero = () => {
   return (
     <div className="relative isolate flex flex-col">
+  <LiquidBubbles />
       <GridBackground />
       <GradientBackground />
       <main className="relative py-24 sm:py-32 lg:pb-40">
@@ -16,48 +21,49 @@ export const Hero = () => {
               variant="h1"
               className="text-5xl font-semibold tracking-tight text-balance sm:text-7xl lg:text-7xl"
             >
-              Vous bâtissez la vision Nous façonnons votre horizon{" "}
+              ! CAMELEO façonne votre succès{" "}
               <span className="relative inline-block">
                 <span>numérique !</span>
                 <CircleSvg className="fill-primary absolute inset-0" />
               </span>
             </Typography>
-          <Typography
-  variant="large"
-  className="text-muted-foreground mt-8 text-lg font-medium text-pretty sm:text-xl/8"
->
-  <span style={{ filter: 'grayscale(95%)' }}>🧠</span> Stratégie.
-  <span style={{ filter: 'grayscale(95%)' }}> 💻</span> Développement. SaaS & Sites web.
-  <span style={{ filter: 'grayscale(95%)' }}> 🎨</span> Design.
-  <span style={{ filter: 'grayscale(95%)' }}> ✍️</span> Copywriting
-  <span style={{ filter: 'grayscale(95%)' }}> 🎥</span> Création de contenu.
-  <span style={{ filter: 'grayscale(95%)' }}> 🤖</span> Automatisation & IA.
-  <span style={{ filter: 'grayscale(95%)' }}> 📢</span> Publicité.
-  <span style={{ filter: 'grayscale(95%)' }}> 🤝</span> Partenariats.
-  <span style={{ filter: 'grayscale(95%)' }}> 🔍</span> Recherche & innovation.
-  <span style={{ filter: 'grayscale(95%)' }}> 📊</span> Analyse de données.
-  <span style={{ filter: 'grayscale(95%)' }}> 📱</span> Applications mobiles.
-  <span style={{ filter: 'grayscale(95%)' }}> ☁️</span> Cloud & hébergement.
-  <span style={{ filter: 'grayscale(95%)' }}> 🛠️</span> Support & maintenance.
-  chaque pixel compte.  
-  <br />
-  Vous avez une idée ? Nous la créons de zéro.
-</Typography>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
-                href="/auth/signin"
-                className={buttonVariants({ size: "lg", variant: "default" })}
-              >
-                Commencer
+
+            <Typography
+              variant="large"
+              className="text-muted-foreground mt-8 text-lg font-medium text-pretty sm:text-xl/8"
+            >
+              <span style={{ filter: 'grayscale(95%)' }}>🧠</span> Stratégie.
+              <span style={{ filter: 'grayscale(95%)' }}> 💻</span> Développement. SaaS & Sites web.
+              <span style={{ filter: 'grayscale(95%)' }}> 🎨</span> Design.
+              <span style={{ filter: 'grayscale(95%)' }}> ✍️</span> Copywriting.
+              <span style={{ filter: 'grayscale(95%)' }}> 🎥</span> Création de contenu.
+              <span style={{ filter: 'grayscale(95%)' }}> 🤖</span> Automatisation & IA.
+              <span style={{ filter: 'grayscale(95%)' }}> 📢</span> Publicité.
+              <span style={{ filter: 'grayscale(95%)' }}> 🤝</span> Partenariats.
+              <span style={{ filter: 'grayscale(95%)' }}> 🔍</span> Recherche & innovation.
+              <span style={{ filter: 'grayscale(95%)' }}> 📊</span> Analyse de données.
+              <span style={{ filter: 'grayscale(95%)' }}> 📱</span> Applications mobiles.
+              <span style={{ filter: 'grayscale(95%)' }}> ☁️</span> Cloud & hébergement.
+              <span style={{ filter: 'grayscale(95%)' }}> 🛠️</span> Support & maintenance. <br />
+              Chaque pixel compte. Vous avez une idée ? Nous la créons de zéro.
+            </Typography>
+
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link href="/auth/signin">
+                <LiquidButton className="text-base px-6 py-3">
+                  Commencer
+                </LiquidButton>
               </Link>
+
               <Link
                 href="#pricing"
                 className={buttonVariants({ size: "lg", variant: "link" })}
               >
-                En savoir plus <span aria-hidden="true">→</span>
+                Devenir partenaire <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
+
           <Image
             alt="App screenshot"
             src="/images/screenshot.png"
@@ -73,7 +79,7 @@ export const Hero = () => {
 
 const GridBackground = () => {
   return (
-    <div className="bg-grid absolute inset-0 [mask-image:linear-gradient(180deg,transparent,var(--foreground),transparent)]"></div>
+    <div className="bg-grid absolute inset-0 [mask-image:linear-gradient(180deg,transparent,var(--foreground),transparent)]" />
   );
 };
 
@@ -89,7 +95,7 @@ const GradientBackground = () => {
             clipPath:
               "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
           }}
-          className="from-primary relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          className="from-gray-800 to-black dark:from-gray-200 dark:to-white relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
         />
       </div>
       <div
@@ -101,7 +107,7 @@ const GradientBackground = () => {
             clipPath:
               "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
           }}
-          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          className="from-black to-gray-800 dark:from-white dark:to-gray-200 relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
         />
       </div>
     </>

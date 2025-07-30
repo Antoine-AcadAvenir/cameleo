@@ -21,5 +21,13 @@ export function CTASectionCard() {
         </div>
       </Card>
     </SectionLayout>
+    
   );
 }
+
+// ✅ GridBackground inclus dans ce fichier
+const GridBackground = () => {
+  return (
+    <div className="bg-grid absolute inset-0 [mask-image:linear-gradient(180deg,transparent,var(--foreground),transparent)]" />
+  );
+};
