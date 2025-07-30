@@ -55,6 +55,15 @@ const defaultElementMapping = {
   default: "p",
 } satisfies Record<NonNullable<TypographyCvaProps["variant"]>, ElementType>;
 
+type TypographyVariant = keyof typeof defaultElementMapping;
+
+interface TypographyProps {
+  variant?: TypographyVariant;
+  as?: ElementType;
+  className?: string;
+  children?: React.ReactNode;
+}
+
 type ElementMapping = typeof defaultElementMapping;
 
 type ElementTypeForVariant<TVariant extends keyof ElementMapping> =
@@ -100,7 +109,7 @@ const InnerTypography = <
   >,
   ref: ForwardedRef<any>,
 ) => {
-  const Comp = as ?? defaultElementMapping[variant ?? "default"];
+  const Comp = as ?? defaultElementMapping[variant ?? "default"]; as keyof typeof defaultElementMapping] ?? "p";
   return (
     <Comp
       {...props}
