@@ -10,11 +10,21 @@ import { LiquidBubbles } from "@/components/ui/liquidbubbles.tsx";
 
 export const Hero = () => {
   return (
-    <div className="relative isolate flex flex-col">
-  <LiquidBubbles />
+    <div className="relative isolate flex flex-col overflow-hidden">
+
+      {/* EFFET LIQUID BUBBLES - FIXÉ, HAUT, TOUT DEVANT */}
+      <div
+        className="pointer-events-none absolute top-[-150px] left-0 w-full h-[80%] z-[9999]"
+      >
+        <LiquidBubbles />
+      </div>
+
+      {/* FOND */}
       <GridBackground />
       <GradientBackground />
-      <main className="relative py-24 sm:py-32 lg:pb-40">
+
+      {/* CONTENU */}
+      <main className="relative z-10 py-24 sm:py-32 lg:pb-40">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <Typography
@@ -49,9 +59,9 @@ export const Hero = () => {
             </Typography>
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/auth/signin">
+              <Link href="/auth/signup">
                 <LiquidButton className="text-base px-6 py-3">
-                  Commencer
+                  Façonner
                 </LiquidButton>
               </Link>
 
@@ -64,13 +74,16 @@ export const Hero = () => {
             </div>
           </div>
 
-          <Image
-            alt="App screenshot"
-            src="/images/screenshot.png"
-            width={1280}
-            height={720}
-            className="mt-16 rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 sm:mt-24"
-          />
+          {/* IMAGE AVEC Z-INDEX FAIBLE */}
+          <div className="relative z-0">
+            <Image
+              alt="App screenshot"
+              src="/images/screenshot.png"
+              width={1280}
+              height={720}
+              className="mt-16 rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 sm:mt-24"
+            />
+          </div>
         </div>
       </main>
     </div>
