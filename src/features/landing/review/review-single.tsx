@@ -46,16 +46,15 @@ export const ReviewSingle = (props: ReviewSingleProps) => {
               </Typography>
               {props.compagnyImage ? (
                 <>
-                  <span>at</span>
+                  <span></span>
 
-                  <Avatar className="size-8">
-                    <AvatarFallback>{props.name[0]}</AvatarFallback>
-                    <AvatarImage
-                      src={props.compagnyImage}
-                      className="object-contain"
-                      alt={props.name}
-                    />
-                  </Avatar>
+ <Avatar className="w-20 h-10 rounded-lg overflow-visible">
+  <img
+    src={props.compagnyImage}
+    alt="Logo entreprise"
+    className="w-full h-full object-contain rounded-xl scale-70"
+  />
+</Avatar>
                 </>
               ) : null}
             </p>

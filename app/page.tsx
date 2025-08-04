@@ -33,25 +33,26 @@ export default function HomePage() {
       <PainSection />
 
       <SectionDivider />
+      
 
       <ReviewTriple
         reviews={[
           {
             image: "https://i.pravatar.cc/300?u=a1",
-            name: "Sophie",
-            review: `Threader **has completely transformed the way I manage my social media** content. The ability to schedule posts and use AI for content suggestions has saved me hours each week.`,
-            role: "Digital Marketer",
-          },
-          {
-            image: "https://i.pravatar.cc/300?u=a2",
-            name: "Alex",
-            review: `Using Threader has significantly boosted my online engagement. **The analytics tool helps me understand what works**, allowing me to refine my strategy and grow my follower base.`,
-            role: "Social Media Influencer",
+            name: "Florian",
+            review: ` Connaissant le dirigeant de **CAMELEO** , j’ai testé leur version **bêta** comme **freelance** . J’ai adoré ! Le fonctionnement est **simple** , **innovant** , et **clair** . Les freelances sont tous **hyper bien formés** grâce à la **formation** et la **certification obligatoires** . Pour chaque client fictif , je devais réaliser un **plan détaillé : étapes , objectifs , défis, timing , et budget** basé sur leur grille tarifaire. Tout est carré , **pro** , **efficace** . La bêta était déjà **folle** , la **version finale** va tout écraser ! Je **kiffe** bosser avec eux **!**`,
+            role: "Freelance",
           },
           {
             image: "https://i.pravatar.cc/300?u=a3",
-            name: "Jordan",
-            review: `The ease of scheduling and the AI-generated content features are game-changers. **Threader's user-friendly interface** makes it perfect for anyone looking to enhance their online presence.`,
+            name: "Bruno",
+            review: ` Je gère mon **hébergement**  mon **nom de domaine** et la **maintenance** de mon **site web** avec **CAMELEO** . Tout est **parfait** , mise en service **gratuite** , et je paye rien avant les **résultats** . À ce prix , c’est **donné** **!**`,
+            role: "Bioénergéticien",
+          },
+          {
+            image: "https://i.pravatar.cc/300?u=a3",
+            name: "Evan",
+            review: `J’ai confié ma **stratégie** à **CAMELEO** pour **valider** et **lancer** mon **projet** **rapidement** et **efficacement** . Le premier freelance, super **honnête**, m’a redirigé vers un autre freelance **expert de mon domaine** qui a tout de suite capté **mes besoins**. Il m’a envoyé un **plan détaillé** : étapes, objectifs, défis, clair et précis, validé à chaque étape via leur **dashboard** . J’ai **rejeté** une étape , il a rebondi avec une proposition **béton** et **qualitative** . C’est du **lourd** , **résultat** Leur étude de marché est hyper **précise** , et le business plan est béton , je suis prêt à **cartonner** **!** `,
             role: "Entrepreneur",
           },
         ]}
@@ -60,11 +61,11 @@ export default function HomePage() {
       <SectionDivider />
 
       <ReviewSingle
-        image="https://i.pravatar.cc/300?u=5"
-        name="Michel"
-        review={`Threader **has completely transformed** the way I manage my social media content. The ability to schedule posts and use AI for content suggestions **has saved me hours each week.**`}
-        role="Digital Marketer"
-        compagnyImage="https://1000logos.net/wp-content/uploads/2017/03/McDonalds-Logo-2003.png"
+        image="images/maëva.jpg"
+        name="Maëva"
+        review={` **CAMELEO**, une **révolution** ! **Innovation** totale ! Le **dashboard** est clair , suivre mon **projet** en temps réel est **top** . Le paiement au **résultat** , Je **gagne**, Je paye, **Zéro risque** ! Résultats **assurés**, je **recommande** !`}
+        role="MBM Nettoyage"
+        compagnyImage="images/logo-mbm.png"
         key={1}
       />
 
