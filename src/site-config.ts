@@ -10,7 +10,7 @@ export const SiteConfig = {
     address: "", // Remove if not needed
   },
   brand: {
-    primary: "#007291", // You can adjust this to your brand color
+    primary: "#000000", // You can adjust this to your brand color
   },
   team: {
     image: "https://melvynx.com/images/me/twitter-en.jpg",

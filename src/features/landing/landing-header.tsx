@@ -9,6 +9,15 @@ import { useEffect } from "react";
 import { AuthButtonClient } from "../auth/auth-button-client";
 import { ThemeToggle } from "../theme/theme-toggle";
 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
 function useBoundedScroll(threshold: number) {
   const { scrollY } = useScroll();
   const scrollYBounded = useMotionValue(0);
@@ -23,7 +32,6 @@ function useBoundedScroll(threshold: number) {
       const previous = scrollY.getPrevious() ?? 0;
       const diff = current - previous;
       const newScrollYBounded = scrollYBounded.get() + diff;
-
       scrollYBounded.set(clamp(newScrollYBounded, 0, threshold));
     };
 
@@ -62,6 +70,7 @@ export function LandingHeader() {
       className="fixed inset-x-0 z-50 flex h-20 w-screen shadow backdrop-blur-md"
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 lg:px-8">
+        {/* Logo et titre */}
         <div className="flex items-center gap-1">
           <LogoSvg
             size={24}
@@ -82,6 +91,8 @@ export function LandingHeader() {
             {SiteConfig.title}
           </motion.p>
         </div>
+
+        {/* Menu avec sous-parties */}
         <motion.nav
           style={{
             opacity: useTransform(
@@ -90,16 +101,96 @@ export function LandingHeader() {
               [1, 0],
             ),
           }}
-          className="text-muted-foreground flex items-center gap-4 text-sm font-medium"
+          className="flex items-center gap-4 text-sm font-medium"
         >
-          <Link href="#features">Offres</Link>
-          <Link href="/pricing">Tarifs</Link>
-          <Link href="/partenaire">Partenaire</Link>
+          <NavigationMenu viewport={false}>
+            <NavigationMenuList className="flex items-center gap-4">
+              {/* Menu Offres */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Offres</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-2 p-4">
+                    <ListItem href="/#features" title="création de contenue">
+                      montage vidéo,
+                      création de publicité,
+                      création de script,
+                      tournage de vidéo,
+                      studio vidéo,
+                    </ListItem>
+                    <ListItem href="/#features" title="création web">
+                      de la création du plan jusqu'aux desegn nos expert vous accompagnet dans la création de votre application mobiles, SAAS, site web,
+                    </ListItem>
+                    <ListItem href="/#features" title="maintenance et hebergment">
+                      je ferais le texte demmais la j'ai la flemme.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Menu Tarifs */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Tarifs</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[300px] gap-2 p-4">
+                    <ListItem href="/#pricing" title="Mensuel">
+                      Paiement flexible chaque mois.
+                    </ListItem>
+                    <ListItem href="/#pricing" title="Résultat">
+                      Payer au résultat.
+                    </ListItem>
+                    <ListItem href="/#pricing" title="Sur mesure">
+                      Contactez-nous pour un devis personnalisé.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Menu Partenaire */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Partenaire</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[300px] gap-2 p-4">
+                    <ListItem href="/temp" title="Programme d’affiliation">
+                      Gagnez des commissions en recommandant notre service.
+                    </ListItem>
+                    <ListItem href="/temp" title="Freelance">
+                      Devenez un de nos freelance qui chaque mois gagnent plus de 2000 euro en exercant leurs passion.
+                    </ListItem>
+                    <ListItem href="/temp" title="je verrais demain">
+                      je verrais demmain pensser a faire refaire le texte a chatgpt et corriger les faut d'orthographe.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* Boutons */}
           <AuthButtonClient />
           <ThemeToggle />
         </motion.nav>
       </div>
     </motion.header>
+  );
+}
+
+function ListItem({
+  title,
+  children,
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+  return (
+    <li {...props}>
+      <NavigationMenuLink asChild>
+        <Link href={href}>
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+            {children}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
   );
 }
 

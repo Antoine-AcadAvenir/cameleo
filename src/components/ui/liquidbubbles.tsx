@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useMemo, useEffect } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useTheme } from 'next-themes';
@@ -115,20 +115,27 @@ void main() {
 }
 `;
 
-function LavaLampShader({ theme }: { theme: string }) {
-  const meshRef = useRef();
+function LavaLampShader({ theme }) {
   const { size } = useThree();
-
-  const uniforms = useMemo(() => ({
-    time: { value: 0 },
-    resolution: { value: new THREE.Vector4() },
-    baseColor: {
-      value:
-        theme === 'dark'
-          ? new THREE.Color(0.7, 0.7, 0.7)
-          : new THREE.Color(0.2, 0.2, 0.2),
+  const material = useMemo(() => new THREE.ShaderMaterial({
+    uniforms: {
+      time: { value: 0 },
+      resolution: { value: new THREE.Vector4() },
+      baseColor: { value: new THREE.Color(0.2, 0.2, 0.2) }, // Initial value
     },
-  }), [theme]);
+    vertexShader,
+    fragmentShader,
+    transparent: true,
+    depthWrite: false,
+  }), []);
+
+  useEffect(() => {
+    material.uniforms.baseColor.value = theme === 'dark' ? new THREE.Color(0.7, 0.7, 0.7) : new THREE.Color(0.2, 0.2, 0.2);
+  }, [theme, material]);
+
+  useFrame(({ clock }) => {
+    material.uniforms.time.value = clock.getElapsedTime();
+  });
 
   useEffect(() => {
     const { width, height } = size;
@@ -141,23 +148,13 @@ function LavaLampShader({ theme }: { theme: string }) {
       a1 = 1;
       a2 = (height / width) / aspect;
     }
-    uniforms.resolution.value.set(width, height, a1, a2);
-  }, [size]);
-
-  useFrame(({ clock }) => {
-    uniforms.time.value = clock.getElapsedTime();
-  });
+    material.uniforms.resolution.value.set(width, height, a1, a2);
+  }, [size, material]);
 
   return (
-    <mesh ref={meshRef}>
+    <mesh>
       <planeGeometry args={[2, 2]} />
-      <shaderMaterial
-        uniforms={uniforms}
-        vertexShader={vertexShader}
-        fragmentShader={fragmentShader}
-        transparent
-        depthWrite={false}
-      />
+      <primitive object={material} attach="material" />
     </mesh>
   );
 }
@@ -181,7 +178,7 @@ export function LiquidBubbles() {
         orthographic
         camera={{ position: [0, 0, 1], zoom: 1 }}
         gl={{ alpha: true, failIfMajorPerformanceCaveat: false }}
-        style={{ pointerEvents: 'none' }} // ✅ ne bloque pas les clics
+        style={{ pointerEvents: 'none' }}
       >
         <LavaLampShader theme={resolvedTheme ?? 'light'} />
       </Canvas>

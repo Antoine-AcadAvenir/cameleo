@@ -38,19 +38,19 @@ export default function HomePage() {
       <ReviewTriple
         reviews={[
           {
-            image: "https://i.pravatar.cc/300?u=a1",
+            image: "", /* ne rien mettre pour que ce soit la premier lettre du prénom dans la photo de profile*/
             name: "Florian",
             review: ` Connaissant le dirigeant de **CAMELEO** , j’ai testé leur version **bêta** comme **freelance** . J’ai adoré ! Le fonctionnement est **simple** , **innovant** , et **clair** . Les freelances sont tous **hyper bien formés** grâce à la **formation** et la **certification obligatoires** . Pour chaque client fictif , je devais réaliser un **plan détaillé : étapes , objectifs , défis, timing , et budget** basé sur leur grille tarifaire. Tout est carré , **pro** , **efficace** . La bêta était déjà **folle** , la **version finale** va tout écraser ! Je **kiffe** bosser avec eux **!**`,
             role: "Freelance",
           },
           {
-            image: "https://i.pravatar.cc/300?u=a3",
+            image: "images/bioénergéticien.png",
             name: "Bruno",
             review: ` Je gère mon **hébergement**  mon **nom de domaine** et la **maintenance** de mon **site web** avec **CAMELEO** . Tout est **parfait** , mise en service **gratuite** , et je paye rien avant les **résultats** . À ce prix , c’est **donné** **!**`,
             role: "Bioénergéticien",
           },
           {
-            image: "https://i.pravatar.cc/300?u=a3",
+            image: "", /* ne rien mettre pour que ce soit la premier lettre du prénom dans la photo de profile*/
             name: "Evan",
             review: `J’ai confié ma **stratégie** à **CAMELEO** pour **valider** et **lancer** mon **projet** **rapidement** et **efficacement** . Le premier freelance, super **honnête**, m’a redirigé vers un autre freelance **expert de mon domaine** qui a tout de suite capté **mes besoins**. Il m’a envoyé un **plan détaillé** : étapes, objectifs, défis, clair et précis, validé à chaque étape via leur **dashboard** . J’ai **rejeté** une étape , il a rebondi avec une proposition **béton** et **qualitative** . C’est du **lourd** , **résultat** Leur étude de marché est hyper **précise** , et le business plan est béton , je suis prêt à **cartonner** **!** `,
             role: "Entrepreneur",

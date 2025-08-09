@@ -10,7 +10,7 @@ import { LiquidBubbles } from "@/components/ui/liquidbubbles.tsx";
 
 export const Hero = () => {
   return (
-    <div className="relative isolate flex flex-col overflow-hidden">
+    <div className="relative isolate flex flex-col overflow-hidden -mt-16">
 
       {/* EFFET LIQUID BUBBLES - FIXÉ, HAUT, TOUT DEVANT */}
       <div
@@ -92,7 +92,7 @@ export const Hero = () => {
 
 const GridBackground = () => {
   return (
-    <div className="bg-grid absolute inset-0 [mask-image:linear-gradient(180deg,transparent,var(--foreground),transparent)]" />
+    <div className="bg-grid absolute inset-0 -z-10 [mask-image:linear-gradient(180deg,transparent,var(--foreground),transparent)]" />
   );
 };
 
