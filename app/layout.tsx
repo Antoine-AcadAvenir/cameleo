@@ -14,6 +14,7 @@ import { Suspense, type ReactNode } from "react";
 import "./globals.css";
 import { Providers } from "./providers";
 import LoaderClient from "@/components/ui/LoaderClient"; // composant client de transition
+import BackgroundMusic from "@/components/ui/BackgroundMusic"; //music
 
 export const metadata: Metadata = {
   title: SiteConfig.title,
@@ -58,6 +59,9 @@ export default function RootLayout({
         >
           <div className="w-8 h-8 border-4 border-primary border-t-transparent animate-spin rounded-full"></div>
         </div>
+
+        {/* Ajoute BackgroundMusic ici pour qu’elle soit partout */}
+        <BackgroundMusic />
 
         {/* ✅ Contenu réel avec loader React client */}
         <LoaderClient>

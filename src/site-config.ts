@@ -1,12 +1,12 @@
 export const SiteConfig = {
-  title: "Cameleo",
+  title: "BlackOnWhite",
   description: "Collect and showcase powerful video and text testimonials",
-  prodUrl: "https://cameleo.vercel.appy",
-  appId: "Cameleo",
-  domain: "cameleo.vercel.app",
+  prodUrl: "https://BlackOnWhite.vercel.appy",
+  appId: "BlackOnWhite",
+  domain: "BlackOnWhite.vercel.app",
   appIcon: "/images/icon.png",
   company: {
-    name: "Cameleo",
+    name: "BlackOnWhite",
     address: "", // Remove if not needed
   },
   brand: {

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Typography } from "@/components/nowts/typography";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { LiquidBubbles } from "@/components/ui/liquidbubbles.tsx";
+import { LiquidBubbles } from "@/components/ui/liquidbubbles";
 
 export const Hero = () => {
   return (
@@ -31,7 +31,7 @@ export const Hero = () => {
               variant="h1"
               className="text-5xl font-semibold tracking-tight text-balance sm:text-7xl lg:text-7xl"
             >
-              ! CAMELEO façonne votre succès{" "}
+              ! BlackOnWhite façonne votre succès{" "}
               <span className="relative inline-block">
                 <span>numérique !</span>
                 <CircleSvg className="fill-primary absolute inset-0" />
@@ -44,7 +44,11 @@ export const Hero = () => {
             >
               <span style={{ filter: 'grayscale(95%)' }}>🧠</span> Stratégie.
               <span style={{ filter: 'grayscale(95%)' }}> 💻</span> Développement. SaaS & Sites web.
-              <span style={{ filter: 'grayscale(95%)' }}> 🎨</span> Design.
+              <span style={{ filter: 'grayscale(95%)' }}> 💼</span> Holding,
+              <span style={{ filter: 'grayscale(95%)' }}> 🎨</span> Design,
+              <span style={{ filter: 'grayscale(95%)' }}> 🏢 </span> Création & gestion d’entreprise
+              <span style={{ filter: 'grayscale(95%)' }}> 📈 </span> Optimisation fiscale.
+              <span style={{ filter: 'grayscale(95%)' }}> 🤝</span> Rachat & revente de sociétés.
               <span style={{ filter: 'grayscale(95%)' }}> ✍️</span> Copywriting.
               <span style={{ filter: 'grayscale(95%)' }}> 🎥</span> Création de contenu.
               <span style={{ filter: 'grayscale(95%)' }}> 🤖</span> Automatisation & IA.

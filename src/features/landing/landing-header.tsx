@@ -21,11 +21,7 @@ import {
 function useBoundedScroll(threshold: number) {
   const { scrollY } = useScroll();
   const scrollYBounded = useMotionValue(0);
-  const scrollYBoundedProgress = useTransform(
-    scrollYBounded,
-    [0, threshold],
-    [0, 1],
-  );
+  const scrollYBoundedProgress = useTransform(scrollYBounded, [0, threshold], [0, 1]);
 
   useEffect(() => {
     const onChange = (current: number) => {
@@ -56,11 +52,7 @@ function useBoundedScroll(threshold: number) {
 export function LandingHeader() {
   const { scrollYBoundedProgress } = useBoundedScroll(400);
   const router = useRouter();
-  const scrollYBoundedProgressDelayed = useTransform(
-    scrollYBoundedProgress,
-    [0, 0.75, 1],
-    [0, 0, 1],
-  );
+  const scrollYBoundedProgressDelayed = useTransform(scrollYBoundedProgress, [0, 0.75, 1], [0, 0, 1]);
 
   return (
     <motion.header
@@ -77,16 +69,14 @@ export function LandingHeader() {
             onClick={() => {
               router.push("/");
             }}
+            className="max-sm:w-16 max-sm:h-16"
           />
+          {/* Sur mobile on cache le texte "cameleo" */}
           <motion.p
             style={{
-              scale: useTransform(
-                scrollYBoundedProgressDelayed,
-                [0, 1],
-                [1, 0.9],
-              ),
+              scale: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0.9]),
             }}
-            className="flex origin-left items-center text-xl font-semibold uppercase max-sm:hidden"
+            className="flex origin-left items-center text-xl font-semibold max-sm:hidden"
           >
             {SiteConfig.title}
           </motion.p>
@@ -95,33 +85,39 @@ export function LandingHeader() {
         {/* Menu avec sous-parties */}
         <motion.nav
           style={{
-            opacity: useTransform(
-              scrollYBoundedProgressDelayed,
-              [0, 1],
-              [1, 0],
-            ),
+            opacity: useTransform(scrollYBoundedProgressDelayed, [0, 1], [1, 0]),
           }}
-          className="flex items-center gap-4 text-sm font-medium"
+          className="flex items-center gap-4 text-sm font-medium max-sm:gap-2"
         >
           <NavigationMenu viewport={false}>
-            <NavigationMenuList className="flex items-center gap-4">
+            <NavigationMenuList className="flex items-center gap-4 max-sm:gap-2 max-sm:flex-nowrap max-sm:overflow-x-auto max-sm:scrollbar-thin max-sm:scrollbar-thumb-rounded max-sm:scrollbar-thumb-gray-400">
               {/* Menu Offres */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Offres</NavigationMenuTrigger>
+                <NavigationMenuTrigger
+                  className="max-sm:text-xs max-sm:px-1 max-sm:py-1
+                             bg-transparent !bg-opacity-0 border-none
+                             cursor-pointer
+                             hover:no-underline hover:bg-transparent
+                             hover:scale-100 hover:brightness-100
+                             transition-none"
+                  style={{ userSelect: "none" }}
+                >
+                  Offres
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-2 p-4">
+                  <ul className="grid w-[400px] max-sm:w-[250px] gap-2 p-4 max-sm:p-2">
                     <ListItem href="/#features" title="création de contenue">
                       montage vidéo,
-                      création de publicité,
-                      création de script,
-                      tournage de vidéo,
+                      création pub,
+                      création script,
+                      tournage vidéo,
                       studio vidéo,
                     </ListItem>
                     <ListItem href="/#features" title="création web">
-                      de la création du plan jusqu'aux desegn nos expert vous accompagnet dans la création de votre application mobiles, SAAS, site web,
+                      création plan, design, appli mobiles, SAAS, site web,
                     </ListItem>
                     <ListItem href="/#features" title="maintenance et hebergment">
-                      je ferais le texte demmais la j'ai la flemme.
+                      texte à faire.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -129,9 +125,19 @@ export function LandingHeader() {
 
               {/* Menu Tarifs */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Tarifs</NavigationMenuTrigger>
+                <NavigationMenuTrigger
+                  className="max-sm:text-xs max-sm:px-1 max-sm:py-1
+                             bg-transparent !bg-opacity-0 border-none
+                             cursor-pointer
+                             hover:no-underline hover:bg-transparent
+                             hover:scale-100 hover:brightness-100
+                             transition-none"
+                  style={{ userSelect: "none" }}
+                >
+                  Tarifs
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-2 p-4">
+                  <ul className="grid w-[300px] max-sm:w-[200px] gap-2 p-4 max-sm:p-2">
                     <ListItem href="/#pricing" title="Mensuel">
                       Paiement flexible chaque mois.
                     </ListItem>
@@ -147,17 +153,27 @@ export function LandingHeader() {
 
               {/* Menu Partenaire */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Partenaire</NavigationMenuTrigger>
+                <NavigationMenuTrigger
+                  className="max-sm:text-xs max-sm:px-1 max-sm:py-1
+                             bg-transparent !bg-opacity-0 border-none
+                             cursor-pointer
+                             hover:no-underline hover:bg-transparent
+                             hover:scale-100 hover:brightness-100
+                             transition-none"
+                  style={{ userSelect: "none" }}
+                >
+                  Partenaire
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-2 p-4">
-                    <ListItem href="/temp" title="Programme d’affiliation">
+                  <ul className="grid w-[300px] max-sm:w-[200px] gap-2 p-4 max-sm:p-2">
+                    <ListItem href="/temp" title="Affiliation">
                       Gagnez des commissions en recommandant notre service.
                     </ListItem>
                     <ListItem href="/temp" title="Freelance">
-                      Devenez un de nos freelance qui chaque mois gagnent plus de 2000 euro en exercant leurs passion.
+                      Freelance gagnent +2000€/mois.
                     </ListItem>
-                    <ListItem href="/temp" title="je verrais demain">
-                      je verrais demmain pensser a faire refaire le texte a chatgpt et corriger les faut d'orthographe.
+                    <ListItem href="/temp" title="A revoir">
+                      Texte à refaire et corriger.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -165,9 +181,11 @@ export function LandingHeader() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Boutons */}
-          <AuthButtonClient />
-          <ThemeToggle />
+          {/* Boutons Auth + Theme */}
+          <div className="flex items-center gap-2 max-sm:gap-1 max-sm:min-w-[70px] max-sm:text-xs max-sm:py-0 max-sm:px-2">
+            <AuthButtonClient className="max-sm:text-xs max-sm:min-w-[60px] max-sm:px-2 max-sm:py-1" />
+            <ThemeToggle />
+          </div>
         </motion.nav>
       </div>
     </motion.header>
@@ -184,8 +202,10 @@ function ListItem({
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link href={href}>
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+          <div className="text-sm font-medium leading-none max-sm:text-xs max-sm:leading-snug max-sm:truncate">
+            {title}
+          </div>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug max-sm:text-[10px] max-sm:leading-tight max-sm:line-clamp-1">
             {children}
           </p>
         </Link>
