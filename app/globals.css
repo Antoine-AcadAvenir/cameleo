@@ -101,7 +101,6 @@
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
 }
 
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -153,8 +152,6 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
-
-
 
   @keyframes accordion-down {
     from {
@@ -290,11 +287,15 @@
   }
 }
 
-
 img {
   filter: grayscale(100%);
 }
 
 h2 {
   filter: grayscale(100%);
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }

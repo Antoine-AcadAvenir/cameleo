@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { AuthButtonClient } from "../auth/auth-button-client";
 import { ThemeToggle } from "../theme/theme-toggle";
+import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
 
 import {
   NavigationMenu,
@@ -184,7 +185,7 @@ export function LandingHeader() {
           {/* Boutons Auth + Theme */}
           <div className="flex items-center gap-2 max-sm:gap-1 max-sm:min-w-[70px] max-sm:text-xs max-sm:py-0 max-sm:px-2">
             <AuthButtonClient className="max-sm:text-xs max-sm:min-w-[60px] max-sm:px-2 max-sm:py-1" />
-            <ThemeToggle />
+            <AnimatedThemeToggler />
           </div>
         </motion.nav>
       </div>
