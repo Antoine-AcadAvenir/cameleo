@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Typography } from "@/components/nowts/typography";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { LiquidBubbles } from "@/components/ui/liquidbubbles";
+import { motion } from "motion/react";
+import { LampContainer } from "@/components/ui/lamp";
 
 export const Hero = () => {
   return (
@@ -27,6 +29,12 @@ export const Hero = () => {
       <main className="relative z-10 py-24 sm:py-32 lg:pb-40">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
+
+       {/* LAMPE AU-DESSUS DU TEXTE */}
+        <div className="mt-30">
+        <LampContainer />
+         </div>
+
             <Typography
               variant="h1"
               className="text-5xl font-semibold tracking-tight text-balance sm:text-7xl lg:text-7xl"
@@ -77,6 +85,13 @@ export const Hero = () => {
               </Link>
             </div>
           </div>
+
+
+         {/* ajout lumière */}
+        <div className="mt-60">
+        <LampContainer />
+         </div>
+
 
           {/* IMAGE AVEC Z-INDEX FAIBLE */}
           <div className="relative z-0">
